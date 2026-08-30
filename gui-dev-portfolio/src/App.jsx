@@ -1,20 +1,20 @@
-
+import { Header } from "@/layout/Header.jsx"
+import { Hero } from "@/sections/Hero.jsx"
+import { Sobre } from "@/sections/Sobre.jsx"
+import { Projetos } from "@/sections/Projetos.jsx"
+import { Contatos } from "@/sections/Contatos.jsx"
 
 function App() {
   return(
-    <main>
-      <header className="">
-        <nav className="flex mx-auto max-w-7xl justify-between p-6 bg-sky-500">
-          <div>
-            <h1>Portfolio</h1>
-          </div>
-
-          <div>
-            <h2>Gui - Dev</h2>
-          </div>
-        </nav>
-      </header>
-    </main>
+    <div className="min-h-screen overflow-x-hidden">
+      <Header/ >
+      <main>
+        <Hero/ >
+        <Sobre/ >
+        <Projetos/ >
+        <Contatos/ >
+      </main>
+    </div>
   )
 }
 
