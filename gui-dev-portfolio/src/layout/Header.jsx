@@ -1,10 +1,14 @@
 import { useState } from "react"
 
+
 // Componentes
 import { Button } from "@/components/Button.jsx"
 
 // icones
 import { Menu, X} from "lucide-react"
+
+// Imagens
+import Logo from "@/assets/logo.png"
 
 const navLinks = [
     {href: "#Sobre", label: "Sobre"},
@@ -17,10 +21,10 @@ export const Header = () => {
 
     return (
         <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
-            <nav className="container mx-auto px-6 flex justify-between">
+            <nav className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
-                <a href="#" className="text-xl font-bold hover:text-primary">
-                    GB
+                <a href="#">
+                    <img src={Logo} alt="Logo com G e B estilizado" className="w-10"/>
                 </a>
 
                 {/* Navbar para desktop */}
