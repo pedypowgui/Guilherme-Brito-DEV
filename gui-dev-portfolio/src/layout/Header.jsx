@@ -20,7 +20,7 @@ export const Header = () => {
     const [menuMobileAtivo, setMenuMobileAtivo] = useState(false)
 
     return (
-        <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
+        <header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-40">
             <nav className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <a href="#">

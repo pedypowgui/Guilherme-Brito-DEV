@@ -1,5 +1,19 @@
 @import 'tailwindcss';
 
+/* Scroll bar */
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #00ffa697;
+}
+
 /* Cores */
 @theme {
     --color-background: #000B07;
@@ -38,6 +52,10 @@
 
     .font-serif{
         font-family: "Playfair Display", serif;
+    }
+
+    .brilho{
+        box-shadow: 0 0 10px 1px #99ffeca2;
     }
 }
 
