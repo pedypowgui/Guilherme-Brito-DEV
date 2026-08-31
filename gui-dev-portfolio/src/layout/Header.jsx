@@ -1,4 +1,10 @@
+import { useState } from "react"
+
+// Componentes
 import { Button } from "@/components/Button.jsx"
+
+// icones
+import { Menu, X} from "lucide-react"
 
 const navLinks = [
     {href: "#Sobre", label: "Sobre"},
@@ -7,6 +13,8 @@ const navLinks = [
 ]
 
 export const Header = () => {
+    const [menuMobileAtivo, setMenuMobileAtivo] = useState(false)
+
     return (
         <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
             <nav className="container mx-auto px-6 flex justify-between">
@@ -16,7 +24,7 @@ export const Header = () => {
                 </a>
 
                 {/* Navbar para desktop */}
-                <div className="flex items-center gap-1">
+                <div className="hidden md:flex items-center gap-1">
                     <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
                         {/* Imprimindo cada link  */}
                         {navLinks.map((link, index) => (
@@ -28,10 +36,29 @@ export const Header = () => {
                 </div>
 
                 {/* Botao de contate-me */}
-                <div>
+                <div className="hidden md:block">
                     <Button texto="Contate-me" tamanho="sm"></Button>
                 </div>
+
+                {/* Botao menu mobile */}
+                <button className="md:hidden p-2 text-foreground cursor-pointer" onClick={() => setMenuMobileAtivo(!menuMobileAtivo)}>
+                    {menuMobileAtivo? <X size={24} />: <Menu size={24} />}
+                </button>
             </nav>
+
+            {/* Menu mobile */}
+            {menuMobileAtivo && <div className="md:hidden glass-forte animate-fade-in">
+                <div className="container mx-auto p-6 flex flex-col gap-4">
+                    {/* Imprimindo cada link  */}
+                    {navLinks.map((link, index) => (
+                        <a href={link.href} key={index} className="text-lg text-muted-foreground hover:text-foreground py-2"> 
+                            {link.label}
+                        </a>
+                    ))}
+
+                    <Button size="sm" texto="Contate-me"></Button>
+                </div>
+            </div>}
         </header>
     )
 }
