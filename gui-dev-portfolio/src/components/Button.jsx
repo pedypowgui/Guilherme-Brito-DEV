@@ -1,4 +1,4 @@
-export const Button = ({ className = "", tamanho="default", texto }) => {
+export const Button = ({ className = "", tamanho="default", children}) => {
     const classesBase = "rounded-full focus-visible:ring-2 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/50 cursor-pointer"
 
     const classesTamanho = {
@@ -12,7 +12,7 @@ export const Button = ({ className = "", tamanho="default", texto }) => {
     return(
         <button className={classes}>
             <span className="flex items-center justify-center gap-2">
-                {texto}
+                {children}
             </span>
         </button>
     );

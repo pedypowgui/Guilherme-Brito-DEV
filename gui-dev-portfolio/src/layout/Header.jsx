@@ -41,7 +41,7 @@ export const Header = () => {
 
                 {/* Botao de contate-me */}
                 <div className="hidden md:block">
-                    <Button texto="Contate-me" tamanho="sm"></Button>
+                    <Button tamanho="sm">Contate-me</Button>
                 </div>
 
                 {/* Botao menu mobile */}

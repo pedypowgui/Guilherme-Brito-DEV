@@ -1,5 +1,14 @@
 import HeroBg from "../assets/hero/hero-bg.png"
 
+// Componentes
+import { Button } from "../components/Button"
+import { BotaoAnimado } from "../components/BotaoAnimado"
+
+// Icones
+import { FaArrowRight } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
+import { SlSocialLinkedin } from "react-icons/sl";
+
 export const Hero = () => {
     return (
         <section>
@@ -25,6 +34,45 @@ export const Hero = () => {
                     />
                 ))}
             </div>
+
+            {/* Conteúdo */}
+            <article className="container mx-auto px-6 pt-25 pb-20 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Coluna esquerda */}
+                    <div className="pt-40 space-y-4 animate-fade-in">
+                        <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold leading-tight ">
+                            Desenvolvedor de <span className="text-primary text-glow">experiências</span> digitais com 
+                            <span className="font-serif italic font-normal text-white">
+                                 precisão.
+                            </span>
+                        </h1>
+                        <p className="text-lg text-muted-foreground max-w-lg">
+                            Olá, me chamo Guilherme Brito. Sou desenvolvedor de software com foco em React, Node.js e Java Spring. Estou a procura da primeira oportunidade no mercado de trabalho.
+                        </p>
+                        
+                        {/* Botoes */}
+                        <div className="flex flex-wrap gap-4 animate-fade-in animated-delay-300">
+                            <Button tamanho="lg">Entrar em contato<FaArrowRight size={18}/></Button>
+                            <BotaoAnimado>Baixar currículo</BotaoAnimado>
+                        </div>
+
+                        {/* Redes sociais */}
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-muted-foreground">Siga-me: </span>
+                            {[
+                                {icon: FiGithub, href: "https://github.com/pedypowgui"},
+                                {icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/guilhermebritodossantos/"},
+                            ].map((social, idx) => (
+                                <a key={idx} href={social.href} className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
+                                    {<social.icon size={30} className="p-1"/>}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Coluna direita */}
+                </div>
+            </article>
         </section>
     )
 } 
