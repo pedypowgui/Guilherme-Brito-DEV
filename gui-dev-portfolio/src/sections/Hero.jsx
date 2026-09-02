@@ -3,6 +3,7 @@ import HeroBg from "../assets/hero/hero-bg.png"
 // Componentes
 import { Button } from "../components/Button"
 import { BotaoAnimado } from "../components/BotaoAnimado"
+import { BadgeRedeSocial } from "../components/BadgeRedeSocial";
 
 // Icones
 import { FaArrowRight } from "react-icons/fa6";
@@ -53,20 +54,14 @@ export const Hero = () => {
                         {/* Botoes */}
                         <div className="flex flex-wrap gap-4 animate-fade-in animated-delay-300">
                             <Button tamanho="lg">Entrar em contato<FaArrowRight size={18}/></Button>
-                            <BotaoAnimado>Baixar currículo</BotaoAnimado>
+                            <BotaoAnimado href="https://drive.google.com/file/d/1QS7WdTcjzBpiDQulEknaeuVJpIxqWhWJ/view?usp=sharing">Baixar currículo</BotaoAnimado>
                         </div>
 
                         {/* Redes sociais */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Siga-me: </span>
-                            {[
-                                {icon: FiGithub, href: "https://github.com/pedypowgui"},
-                                {icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/guilhermebritodossantos/"},
-                            ].map((social, idx) => (
-                                <a key={idx} href={social.href} className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
-                                    {<social.icon size={30} className="p-1"/>}
-                                </a>
-                            ))}
+                            <BadgeRedeSocial href="https://github.com/pedypowgui"><FiGithub className="p-1" size={30}/></BadgeRedeSocial>
+                            <BadgeRedeSocial href="https://linkedin.com/in/guilhermebritodossantos"><SlSocialLinkedin className="p-1" size={30}/></BadgeRedeSocial>
                         </div>
                     </div>
 

@@ -1,8 +1,12 @@
 import { LuDownload } from "react-icons/lu";
 
-export const BotaoAnimado = ({children}) => {
+export const BotaoAnimado = ({children, href, ...props}) => {
+    function redirecionarRedeSocial(){
+        window.open(href, "_blank")
+    }
+    
     return (
-        <button className="relative bg-transparent border border-border 
+        <button onClick={redirecionarRedeSocial} className="relative bg-transparent border border-border 
             text-foreground hover:border-primary/50 transition-all 
             duration-1000 focus:outline-none focus-visible:ring-2 
             focus-visible:ring-primary focus-visible:ring-offset-2 
