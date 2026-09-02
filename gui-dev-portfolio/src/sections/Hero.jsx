@@ -42,13 +42,12 @@ export const Hero = () => {
                     {/* Coluna esquerda */}
                     <div className="pt-40 space-y-4 animate-fade-in">
                         <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold leading-tight ">
-                            Desenvolvedor de <span className="text-primary text-glow">experiências</span> digitais com 
-                            <span className="font-serif italic font-normal text-white">
-                                 precisão.
-                            </span>
+                            Onde <span className="text-primary text-glow">ideias</span> se
+                            <br />
+                            tornam <span className="font-serif italic font-normal text-white">realidade.</span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg">
-                            Olá, me chamo Guilherme Brito. Sou desenvolvedor de software com foco em React, Node.js e Java Spring. Estou a procura da primeira oportunidade no mercado de trabalho.
+                            Olá, me chamo Guilherme Brito. Sou desenvolvedor de <span className="font-serif italic">software</span> com foco em <span className="font-serif italic">React, Node.js e Java Spring</span>. Estou me aprofundando em IA e automação enquanto busco minha primeira oportunidade no mercado de trabalho.
                         </p>
                         
                         {/* Botoes */}
@@ -64,8 +63,6 @@ export const Hero = () => {
                             <BadgeRedeSocial href="https://linkedin.com/in/guilhermebritodossantos"><SlSocialLinkedin className="p-1" size={30}/></BadgeRedeSocial>
                         </div>
                     </div>
-
-                    {/* Coluna direita */}
                 </div>
             </article>
         </section>
