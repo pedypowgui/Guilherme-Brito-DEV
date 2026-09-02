@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 // Componentes
@@ -18,9 +18,24 @@ const navLinks = [
 
 export const Header = () => {
     const [menuMobileAtivo, setMenuMobileAtivo] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const verificarScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true)
+            } else {
+                setScrolled(false)
+            }
+        }
+
+        window.addEventListener("scroll", verificarScroll)
+
+        return () => window.removeEventListener("scroll", verificarScroll)
+    }, [])
 
     return (
-        <header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-40">
+        <header className={`fixed top-0 left-0 right-0 z-40 py-5 transition-all duration-500 ease-in-out ${scrolled ? "glass-forte" : "bg-transparent"}`}>
             <nav className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <a href="#">

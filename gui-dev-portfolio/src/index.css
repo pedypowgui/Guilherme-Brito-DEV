@@ -73,7 +73,6 @@
     .glass-forte {
         background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
         backdrop-filter: blur(8px);
-        border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
     }
 
     .text-glow {
@@ -84,6 +83,18 @@
 
 @layer utilities{
 
+    @keyframes marquee {
+        0%{
+            transform: translateX(0);
+        } 100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 30s linear infinite;    
+    }
+    
     /* Animacoes */
     @keyframes fade-in {
         from {

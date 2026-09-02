@@ -9,8 +9,29 @@ import { BadgeRedeSocial } from "../components/BadgeRedeSocial";
 import { FaArrowRight } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 export const Hero = () => {
+    const skills = [
+        "React",
+        "C++",
+        "Node.js",
+        "Spring Boot",
+        "C#",
+        "Python",
+        "Tailwind",
+        "MongoDB",
+        "C",
+        "MySQL",
+        "Express",
+        "Prisma",
+        "Github",
+        "Git",
+        "Agentic AI",
+        "AWS",
+        "Kotlin"
+    ]
+
     return (
         <section>
             {/* Imagem de fundo com gradiente */}
@@ -61,6 +82,22 @@ export const Hero = () => {
                             <span className="text-sm text-muted-foreground">Siga-me: </span>
                             <BadgeRedeSocial href="https://github.com/pedypowgui"><FiGithub className="p-1" size={30}/></BadgeRedeSocial>
                             <BadgeRedeSocial href="https://linkedin.com/in/guilhermebritodossantos"><SlSocialLinkedin className="p-1" size={30}/></BadgeRedeSocial>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Skills */}
+                <div className="mt-0 animate-fade-in animation-delay-600">
+                    <p className="text-sm flex justify-center text-muted-foreground mb-6">
+                        <MdKeyboardDoubleArrowDown size={20}/> Minhas habilidades <MdKeyboardDoubleArrowDown size={20}/>
+                    </p>
+                    <div className="relative overflow-hidden">
+                        <div className="flex animate-marquee">
+                            {[...skills, ...skills].map((skill, idx) => (
+                                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">{skill}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
