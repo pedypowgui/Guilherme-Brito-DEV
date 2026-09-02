@@ -1,13 +1,27 @@
 @import 'tailwindcss';
 
+/* Scroll bar */
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #00ffa697;
+}
+
 /* Cores */
 @theme {
-    --color-background: #0f1418;
+    --color-background: #000B07;
     --color-foreground: #f0f2f5;
 
     --color-card: #141a1f;
 
-    --color-primary: #20b2a6;
+    --color-primary: #00AE72;
     --color-primary-foreground: #ffffff;
 
     --color-secondary: #1f2830;
@@ -36,22 +50,35 @@
         font-family: "Inter", sans-serif;
     }
 
+    button{
+        cursor: pointer;
+    }
+
     .font-serif{
         font-family: "Playfair Display", serif;
+    }
+
+    .brilho{
+        box-shadow: 0 0 10px 1px #99ffeca2;
     }
 }
 
 @layer componentes{
     .glass {
         background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-        backdrop-filter: blur(16px);
+        backdrop-filter: blur(8px);
         border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
     }
 
     .glass-forte {
         background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
-        backdrop-filter: blur(24px);
+        backdrop-filter: blur(8px);
         border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+    }
+
+    .text-glow {
+        text-shadow: 0 0 30px
+            color-mix(in srgb, var(--color-primary) 100%, transparent);
     }
 }
 
@@ -72,5 +99,51 @@
 
     .animate-fade-in {
         animation: fade-in 0.7s ease-out both;
+    }
+
+    .animation-delay-100 {
+        animation-delay: 100ms;
+    }
+
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animation-delay-300 {
+        animation-delay: 300ms;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .animation-delay-500 {
+        animation-delay: 500ms;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 600ms;
+    }
+
+    .animation-delay-800 {
+        animation-delay: 800ms;
+    }
+
+    @keyframes animated-border {
+        0% {
+            stroke-dashoffset: 400;
+        } 100% {
+            stroke-dashoffset: -550;
+        }
+    }
+
+    .group:hover .animated-border-path{
+        animation: animated-border 1.5s linear infinite;
+    }
+
+    .animated-border:hover {
+        background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
     }
 }
