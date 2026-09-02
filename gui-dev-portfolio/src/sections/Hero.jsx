@@ -37,7 +37,7 @@ export const Hero = () => {
             </div>
 
             {/* Conteúdo */}
-            <article className="container mx-auto px-6 pt-25 pb-20 relative z-10">
+            <article className="container mx-auto px-6 pt-40 pb-20 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Coluna esquerda */}
                     <div className="pt-40 space-y-4 animate-fade-in">
