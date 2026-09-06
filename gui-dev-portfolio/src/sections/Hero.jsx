@@ -1,15 +1,21 @@
-import HeroBg from "../assets/hero/hero-bg.png"
+// Imagens
+import HeroBg1 from "../assets/hero/bg-1.webp"
+import HeroBg2 from "../assets/hero/bg-2.webp"
+import HeroBg3 from "../assets/hero/bg-3.webp"
+import HeroBg4 from "../assets/hero/bg-4.webp"
 
 // Componentes
 import { Button } from "../components/Button"
 import { BotaoAnimado } from "../components/BotaoAnimado"
 import { BadgeRedeSocial } from "../components/BadgeRedeSocial";
-
+ 
 // Icones
 import { FaArrowRight } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
+
 
 export const Hero = () => {
     const skills = [
@@ -33,16 +39,22 @@ export const Hero = () => {
     ]
 
     return (
-        <section>
-            {/* Imagem de fundo com gradiente */}
-            <figure className="absolute inset-0">
-                <img src={HeroBg} alt="Foto do espaço sideral com dois planetas" className="w-full h-full object-cover"/>
+        <section className="">
+            {/* Imagem de fundo estrelada fixa*/}
+            <div className="absolute inset-0 overflow-hidden h-screen">
+                <img src={HeroBg1} alt="Espaço sideral estrelado" className="absolute w-full h-full object-cover opacity-60"/>
+            </div>
+            {/* Imagem de fundo planetas com efeito parallax*/}
+            <figure className="absolute inset-0 overflow-hidden h-screen" id="smooth-content">
+                <img src={HeroBg4} alt="Planeta medio" className="absolute w-full h-full object-cover" data-speed="1.5"/>
+                <img src={HeroBg2} alt="Planeta gigante e esverdeado" className="absolute w-full h-full object-cover" data-speed="1.1"/>
+                <img src={HeroBg3} alt="Planeta pequeno" className="absolute top-50 w-full h-full object-cover" data-speed="1"/>
+                <div className="absolute inset-0 bg-gradient-to-b via-background/80 to-background"></div>
             </figure>
-            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/70 to-background"></div>
 
             {/* Estrelas */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(60)].map((_, i) => (
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" data-speed="1.2">
+                {[...Array(90)].map((_, i) => (
                     <div 
                         key={i}
                         className="absolute w-1 h-1 rounded-full animate-pulse opacity-100 brilho" 
@@ -87,11 +99,11 @@ export const Hero = () => {
                 </div>
 
                 {/* Skills */}
-                <div className="mt-0 animate-fade-in animation-delay-600">
+                <div className="mt-10 animate-fade-in animation-delay-600">
                     <p className="text-sm flex justify-center text-muted-foreground mb-6">
-                        <MdKeyboardDoubleArrowDown size={20}/> Minhas habilidades <MdKeyboardDoubleArrowDown size={20}/>
+                        <MdKeyboardDoubleArrowDown className="animate-pulse" size={20}/> Minhas habilidades <MdKeyboardDoubleArrowDown className="animate-pulse" size={20}/>
                     </p>
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden mask-x-from-70%">
                         <div className="flex animate-marquee">
                             {[...skills, ...skills].map((skill, idx) => (
                                 <div key={idx} className="flex-shrink-0 px-8 py-4">

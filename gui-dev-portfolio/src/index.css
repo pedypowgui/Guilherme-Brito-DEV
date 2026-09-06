@@ -16,7 +16,7 @@
 
 /* Cores */
 @theme {
-    --color-background: #000B07;
+    --color-background: #000C14;
     --color-foreground: #f0f2f5;
 
     --color-card: #141a1f;
@@ -57,10 +57,6 @@
     .font-serif{
         font-family: "Playfair Display", serif;
     }
-
-    .brilho{
-        box-shadow: 0 0 10px 1px #99ffeca2;
-    }
 }
 
 @layer componentes{
@@ -78,6 +74,11 @@
     .text-glow {
         text-shadow: 0 0 30px
             color-mix(in srgb, var(--color-primary) 100%, transparent);
+    }
+
+    .glow-border {
+        box-shadow: 0 0 20px
+            color-mix(in srgb, var(--color-primary) 80%, transparent);
     }
 }
 
