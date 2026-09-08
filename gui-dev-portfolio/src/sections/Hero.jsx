@@ -7,15 +7,12 @@ import HeroBg4 from "../assets/hero/bg-4.webp"
 // Componentes
 import { Button } from "../components/Button"
 import { BotaoAnimado } from "../components/BotaoAnimado"
-import { BadgeRedeSocial } from "../components/BadgeRedeSocial";
  
 // Icones
 import { FaArrowRight } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-
-
 
 export const Hero = () => {
     const skills = [
@@ -39,7 +36,7 @@ export const Hero = () => {
     ]
 
     return (
-        <section className="">
+        <section>
             {/* Imagem de fundo estrelada fixa*/}
             <div className="absolute inset-0 overflow-hidden h-screen">
                 <img src={HeroBg1} alt="Espaço sideral estrelado" className="absolute w-full h-full object-cover opacity-60"/>
@@ -47,9 +44,9 @@ export const Hero = () => {
             {/* Imagem de fundo planetas com efeito parallax*/}
             <figure className="absolute inset-0 overflow-hidden h-screen" id="smooth-content">
                 <img src={HeroBg4} alt="Planeta medio" className="absolute w-full h-full object-cover" data-speed="1.5"/>
-                <img src={HeroBg2} alt="Planeta gigante e esverdeado" className="absolute w-full h-full object-cover" data-speed="1.1"/>
-                <img src={HeroBg3} alt="Planeta pequeno" className="absolute top-50 w-full h-full object-cover" data-speed="1"/>
-                <div className="absolute inset-0 bg-gradient-to-b via-background/80 to-background"></div>
+                <img src={HeroBg2} alt="Planeta gigante e esverdeado" className="absolute w-full object-cover md:-translate-y-40" data-speed="1.1"/>
+                <img src={HeroBg3} alt="Planeta pequeno" className="absolute top-50 w-full h-full object-cover" data-speed="1.3"/>
+                <div className="absolute inset-0 bg-gradient-to-b via-background/20 to-background"></div>
             </figure>
 
             {/* Estrelas */}
@@ -92,8 +89,16 @@ export const Hero = () => {
                         {/* Redes sociais */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Siga-me: </span>
-                            <BadgeRedeSocial href="https://github.com/pedypowgui"><FiGithub className="p-1" size={30}/></BadgeRedeSocial>
-                            <BadgeRedeSocial href="https://linkedin.com/in/guilhermebritodossantos"><SlSocialLinkedin className="p-1" size={30}/></BadgeRedeSocial>
+                            <a href="https://github.com/pedypowgui" 
+                               className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                               target="_blank">
+                                    <FiGithub className="p-1" size={30}/>
+                            </a>
+                            <a href="https://linkedin.com/in/guilhermebritodossantos" 
+                               className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                               target="_blank">
+                                    <SlSocialLinkedin className="p-1" size={30}/>
+                            </a>
                         </div>
                     </div>
                 </div>
