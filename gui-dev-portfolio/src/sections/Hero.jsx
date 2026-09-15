@@ -13,6 +13,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import { LuDownload } from "react-icons/lu"
 
 export const Hero = () => {
     const skills = [
@@ -83,7 +84,7 @@ export const Hero = () => {
                         {/* Botoes */}
                         <div className="flex flex-wrap gap-4 animate-fade-in animated-delay-300">
                             <Button tamanho="lg">Entrar em contato<FaArrowRight size={18}/></Button>
-                            <BotaoAnimado href="https://drive.google.com/file/d/1QS7WdTcjzBpiDQulEknaeuVJpIxqWhWJ/view?usp=sharing">Baixar currículo</BotaoAnimado>
+                            <BotaoAnimado href="https://drive.google.com/file/d/1QS7WdTcjzBpiDQulEknaeuVJpIxqWhWJ/view?usp=sharing">Baixar currículo<LuDownload size={20}/></BotaoAnimado>
                         </div>
 
                         {/* Redes sociais */}

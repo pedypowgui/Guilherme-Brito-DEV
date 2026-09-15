@@ -7,12 +7,15 @@ import crudNode from "../assets/capa-projetos/crud-node.png"
 import { FiArrowUpRight } from "react-icons/fi"
 import { TbBrandGithub } from "react-icons/tb";
 
+// Componentes
+import { BotaoAnimado } from "../components/BotaoAnimado"
+
 const projetos = [
     {
         title: "BWarts - E-commerce de MDF",
         description: "E-commerce de produtos em MDF com plataforma de personalização incluído.",
         image: bwarts,
-        tags: ["Bootstrap, JavaScript, Java Spring, Git, Github, MySQL"],
+        tags: ["Bootstrap", "JavaScript", "Java Spring", "Git", "Github", "MySQL"],
         link: "https://foamyritchi.github.io/BWartsMaker/BWartsMaker/pages/global/",
         github: "https://github.com/orgs/BWarts/repositories"
     },
@@ -54,23 +57,55 @@ export const Projetos = () => {
             </div>
 
             {/* Projetos */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="container mx-auto grid md:grid-cols-2 gap-8">
                 {projetos.map((projeto, idx) => (
                     <div key={idx} className="group glass rounded-2xl overflow-hidden md:row-span-1">
                         {/* imagem */}
                         <div className="relative overflow-hidden aspect-video">
                             <img src={projeto.image} alt={projeto.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+                            
                             {/* Efeito de gradiente */}
                             <div className="absolute inset-0 bg-gradient-to-b from-card/10 to-card/40"></div>
+                            
                             {/* Links do projeto */}
                             <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <a href={projeto.link} target="_blank" className="p-3 rounded-full bg-surface hover:bg-primary transition-all"><FiArrowUpRight size={25}/></a>
                                 <a href={projeto.github} target="_blank" className="p-3 rounded-full bg-surface hover:bg-primary hover:text-primary-foreground transition-all"><TbBrandGithub size={25}/></a>
                             </div>
                         </div>
+
+                        {/* Conteudo */}
+                        <div className="p-6 space-y-4">
+                            <div className="flex items-start justify-between">
+                                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{projeto.title}</h3>
+                                <FiArrowUpRight size={25} className="group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"/>
+                            </div>
+                            
+                            <p className="text-muted-foreground text-sm">
+                                {projeto.description}
+                            </p>
+                            
+                            <div className="flex flex-wrap gap-2">
+                                {projeto.tags.map((tag, tagIdx) => (
+                                    <span 
+                                        key={tagIdx} 
+                                        className="px-4 py-1.5 rounded-full bg-surface text-xm font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition duration-300"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 ))}
+
             </div>  
+                <div className="text-center mt-12 ">
+                    <BotaoAnimado>
+                        Ver todos projetos
+                        <FiArrowUpRight size={20}/>
+                    </BotaoAnimado>
+                </div>
         </section>
     )
 } 

@@ -1,12 +1,11 @@
-import { LuDownload } from "react-icons/lu";
-
-export const BotaoAnimado = ({children, href, ...props}) => {
+export const BotaoAnimado = ({children, href}) => {
     function redirecionarRedeSocial(){
         window.open(href, "_blank")
     }
     
     return (
-        <button onClick={redirecionarRedeSocial} className="relative bg-transparent border border-border 
+        <button onClick={redirecionarRedeSocial} 
+            className="relative bg-transparent border border-border 
             text-foreground hover:border-primary/50 transition-all 
             duration-1000 focus:outline-none focus-visible:ring-2 
             focus-visible:ring-primary focus-visible:ring-offset-2 
@@ -33,7 +32,7 @@ export const BotaoAnimado = ({children, href, ...props}) => {
                 />
             </svg>
             <span className="relative z-10 flex items-center justify-center gap-2">
-                <LuDownload size={20}/>{children}
+                {children}
             </span>
         </button>
     )
